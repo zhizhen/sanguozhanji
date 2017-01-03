@@ -2,6 +2,9 @@
 #include "cocos2d.h"
 #include "CAppBaseScene.h"
 #include "CMyEGLView.h"
+#include "CCLuaEngine.h"
+#include "audio/include/SimpleAudioEngine.h"
+#include "lua_module_register.h"
 
 
 static cocos2d::Size designResolutionSize = cocos2d::Size(480, 320);
@@ -89,6 +92,24 @@ void CAppBase::Init()
 		// run
 		director->runWithScene(pBaseScene);
 		pBaseScene->release();
+
+		////// register lua module
+		//auto engine = LuaEngine::getInstance();
+		//ScriptEngineManager::getInstance()->setScriptEngine(engine);
+		//lua_State* L = engine->getLuaStack()->getLuaState();
+		////lua_module_register(L);
+
+		////register_all_packages();
+
+		//LuaStack* stack = engine->getLuaStack();
+		//stack->setXXTEAKeyAndSign("2dxLua", strlen("2dxLua"), "XXTEA", strlen("XXTEA"));
+
+		////register custom function
+		////LuaStack* stack = engine->getLuaStack();
+		////register_custom_function(stack->getLuaState());
+
+		//engine->executeScriptFile("src/main.lua");
+
 	}
 }
 

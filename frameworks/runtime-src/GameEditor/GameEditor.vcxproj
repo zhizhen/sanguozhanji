@@ -76,7 +76,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
-    <IntDir>$(Configuration).win32\</IntDir>
+    <IntDir>$(SolutionDir)$(Configuration).win32\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -94,12 +94,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\FW_FrameWork;$(SolutionDir)\..\..\cocos2d-x\cocos;$(SolutionDir)\..\..\cocos2d-x\external\win32-specific\gles\include\OGLES;$(SolutionDir)\..\..\cocos2d-x\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\FW_FrameWork;$(SolutionDir)\..\..\cocos2d-x\cocos;$(SolutionDir)\..\..\cocos2d-x\external\win32-specific\gles\include\OGLES;$(SolutionDir)\..\..\cocos2d-x\external\glfw3\include\win32;$(SolutionDir)\..\..\cocos2d-x\external;$(SolutionDir)\..\..\cocos2d-x\external\lua\lua;$(SolutionDir)\..\..\cocos2d-x\external\lua\tolua;$(SolutionDir)\..\..\cocos2d-x\external\lua\luajit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>FW_FrameWork.lib;glew32.lib;opengl32.lib;glfw3.lib;libcocos2d.lib;libcurl_imp.lib;libeay32.lib;libiconv.lib;libjpeg.lib;libpng.lib;libmpg123.lib;libogg.lib;libvorbis.lib;libvorbisfile.lib;libwebp.lib;libzlib.lib;OpenAl32.lib;sqlite3.lib;ssleay32.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>FW_FrameWork.lib;glew32.lib;opengl32.lib;glfw3.lib;libcocos2d.lib;libluacocos2d.lib;libcurl_imp.lib;libeay32.lib;libiconv.lib;libjpeg.lib;libpng.lib;libmpg123.lib;libogg.lib;libvorbis.lib;libvorbisfile.lib;libwebp.lib;libzlib.lib;OpenAl32.lib;sqlite3.lib;ssleay32.lib;websockets.lib;lua51.lib;lua51-2015.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)\Debug.win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
@@ -224,6 +224,12 @@
     <Image Include="res\GameEditor.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\cocos2d-x\cocos\2d\libcocos2d.vcxproj">
+      <Project>{98a51ba8-fc3a-415b-ac8f-8c7bd464e93e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\cocos2d-x\cocos\scripting\lua-bindings\proj.win32\libluacocos2d.vcxproj">
+      <Project>{9f2d6ce6-c893-4400-b50c-6db70cc2562f}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\FW_FrameWork\FW_FrameWork.vcxproj">
       <Project>{e85ad037-ef7c-4913-8549-beccc83f7180}</Project>
     </ProjectReference>
