@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "Cocos2dxWin.h"
+#include "afxwin.h"
 
 // CGameEditorDlg ¶Ô»°¿ò
 class CGameEditorDlg : public CDialogEx
@@ -31,4 +33,7 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+
+public:
+	CCocos2dxWin m_nPicCocos2dx;
 };

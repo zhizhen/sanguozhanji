@@ -75,6 +75,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -90,12 +92,15 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\FW_FrameWork;$(SolutionDir)\..\..\cocos2d-x\cocos;$(SolutionDir)\..\..\cocos2d-x\external\win32-specific\gles\include\OGLES;$(SolutionDir)\..\..\cocos2d-x\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>FW_FrameWork.lib;glew32.lib;opengl32.lib;glfw3.lib;libcocos2d.lib;libcurl_imp.lib;libeay32.lib;libiconv.lib;libjpeg.lib;libpng.lib;libmpg123.lib;libogg.lib;libvorbis.lib;libvorbisfile.lib;libwebp.lib;libzlib.lib;OpenAl32.lib;sqlite3.lib;ssleay32.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Debug.win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -189,6 +194,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CCocosApp.h" />
+    <ClInclude Include="Cocos2dxWin.h" />
     <ClInclude Include="GameEditor.h" />
     <ClInclude Include="GameEditorDlg.h" />
     <ClInclude Include="Resource.h" />
@@ -196,6 +203,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CCocosApp.cpp" />
+    <ClCompile Include="Cocos2dxWin.cpp" />
     <ClCompile Include="GameEditor.cpp" />
     <ClCompile Include="GameEditorDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -214,7 +223,17 @@
   <ItemGroup>
     <Image Include="res\GameEditor.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FW_FrameWork\FW_FrameWork.vcxproj">
+      <Project>{e85ad037-ef7c-4913-8549-beccc83f7180}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="GameEditor.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

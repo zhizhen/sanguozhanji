@@ -52,3 +52,7 @@
 #endif
 
 
+//去除MFC中与cocos2dx冲突的默认定义
+#ifdef OS_WINDOWS
+#undef OS_WINDOWS
+#endif

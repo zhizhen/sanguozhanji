@@ -58,6 +58,7 @@ CGameEditorDlg::CGameEditorDlg(CWnd* pParent /*=NULL*/)
 void CGameEditorDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_PIC_COCOS2DX, m_nPicCocos2dx);
 }
 
 BEGIN_MESSAGE_MAP(CGameEditorDlg, CDialogEx)
@@ -99,6 +100,7 @@ BOOL CGameEditorDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
+	m_nPicCocos2dx.createGLWin();
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
