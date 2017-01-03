@@ -65,6 +65,9 @@ BEGIN_MESSAGE_MAP(CGameEditorDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_WM_LBUTTONDOWN()
+	ON_WM_LBUTTONUP()
+	ON_WM_MOUSEMOVE()
 END_MESSAGE_MAP()
 
 
@@ -154,3 +157,62 @@ HCURSOR CGameEditorDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+bool CGameEditorDlg::isPointInPictureWin(CPoint& pt)
+{
+	CRect rc;
+	m_nPicCocos2dx.GetWindowRect(&rc);
+	ScreenToClient(&rc);
+
+	if (pt.x >= rc.left && pt.x <= rc.right && pt.y >= rc.top && pt.y <= rc.bottom) return true;
+	return false;
+}
+
+CPoint CGameEditorDlg::getPicturePoint(CPoint& pt)
+{
+	CRect rc;
+	m_nPicCocos2dx.GetWindowRect(&rc);
+	ScreenToClient(&rc);
+
+	CPoint picPt;
+	picPt.x = pt.x - rc.left;
+	picPt.y = pt.y - rc.top;
+
+	return picPt;
+}
+
+
+void CGameEditorDlg::OnLButtonDown(UINT nFlags, CPoint point)
+{
+	// TODO: Add your message handler code here and/or call default
+
+	if (isPointInPictureWin(point)) {
+		CPoint pt = getPicturePoint(point);
+		SendMessageA(m_nPicCocos2dx.GetSafeHwnd(), WM_LBUTTONDOWN, MK_LBUTTON, pt.y << 16 | pt.x);
+	}
+	CDialogEx::OnLButtonDown(nFlags, point);
+}
+
+
+void CGameEditorDlg::OnLButtonUp(UINT nFlags, CPoint point)
+{
+	// TODO: Add your message handler code here and/or call default
+
+	if (isPointInPictureWin(point)) {
+		CPoint pt = getPicturePoint(point);
+		SendMessageA(m_nPicCocos2dx.GetSafeHwnd(), WM_LBUTTONUP, MK_LBUTTON, pt.y << 16 | pt.x);
+	}
+	CDialogEx::OnLButtonUp(nFlags, point);
+}
+
+
+void CGameEditorDlg::OnMouseMove(UINT nFlags, CPoint point)
+{
+	// TODO: Add your message handler code here and/or call default
+
+	if (isPointInPictureWin(point)) {
+		CPoint pt = getPicturePoint(point);
+		SendMessageA(m_nPicCocos2dx.GetSafeHwnd(), WM_MOUSEMOVE, MK_LBUTTON, pt.y << 16 | pt.x);
+	}
+	CDialogEx::OnMouseMove(nFlags, point);
+}
