@@ -117,7 +117,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\external\chipmunk\prebuilt\win32\debug-lib\*.*" 
       <ImportLibrary>$(TargetDir)$(TargetName).lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
       <ModuleDefinitionFile>cocos2d.def</ModuleDefinitionFile>
-      <AdditionalDependencies>sqlite3.lib;libcurl_imp.lib;websockets.lib;libmpg123.lib;libogg.lib;libvorbis.lib;libvorbisfile.lib;OpenAL32.lib;libbullet.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sqlite3.lib;libcurl_imp.lib;websockets.lib;libmpg123.lib;libogg.lib;libvorbis.lib;libvorbisfile.lib;OpenAL32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -1387,20 +1387,6 @@ xcopy /Y /Q "$(ProjectDir)..\..\external\chipmunk\prebuilt\win32\release-lib\*.*
     <None Include="..\math\Vec3.inl" />
     <None Include="..\math\Vec4.inl" />
     <None Include="cocos2d.def" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\external\Box2D\proj.win32\libbox2d.vcxproj">
-      <Project>{929480e7-23c0-4df6-8456-096d71547116}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\external\bullet\proj.win32\libbullet.vcxproj">
-      <Project>{012dff48-a13f-4f52-b07b-f8b9d21ce95b}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\external\recast\proj.win32\librecast.vcxproj">
-      <Project>{41e34993-647e-4282-8384-4ab1ae31a452}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\editor-support\spine\proj.win32\libSpine.vcxproj">
-      <Project>{b7c2a162-dec9-4418-972e-240ab3cbfcae}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

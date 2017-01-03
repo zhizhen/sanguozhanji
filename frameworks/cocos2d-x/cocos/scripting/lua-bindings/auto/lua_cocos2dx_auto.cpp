@@ -4214,56 +4214,56 @@ int lua_cocos2dx_Node_removeComponent(lua_State* tolua_S)
 
     return 0;
 }
-int lua_cocos2dx_Node_setPhysicsBody(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Node* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Node",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Node*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Node_setPhysicsBody'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
-    {
-        cocos2d::PhysicsBody* arg0;
-
-        ok &= luaval_to_object<cocos2d::PhysicsBody>(tolua_S, 2, "cc.PhysicsBody",&arg0, "cc.Node:setPhysicsBody");
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Node_setPhysicsBody'", nullptr);
-            return 0;
-        }
-        cobj->setPhysicsBody(arg0);
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Node:setPhysicsBody",argc, 1);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Node_setPhysicsBody'.",&tolua_err);
-#endif
-
-    return 0;
-}
+//int lua_cocos2dx_Node_setPhysicsBody(lua_State* tolua_S)
+//{
+//    int argc = 0;
+//    cocos2d::Node* cobj = nullptr;
+//    bool ok  = true;
+//
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//
+//
+//#if COCOS2D_DEBUG >= 1
+//    if (!tolua_isusertype(tolua_S,1,"cc.Node",0,&tolua_err)) goto tolua_lerror;
+//#endif
+//
+//    cobj = (cocos2d::Node*)tolua_tousertype(tolua_S,1,0);
+//
+//#if COCOS2D_DEBUG >= 1
+//    if (!cobj) 
+//    {
+//        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Node_setPhysicsBody'", nullptr);
+//        return 0;
+//    }
+//#endif
+//
+//    argc = lua_gettop(tolua_S)-1;
+//    if (argc == 1) 
+//    {
+//        cocos2d::PhysicsBody* arg0;
+//
+//        ok &= luaval_to_object<cocos2d::PhysicsBody>(tolua_S, 2, "cc.PhysicsBody",&arg0, "cc.Node:setPhysicsBody");
+//        if(!ok)
+//        {
+//            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Node_setPhysicsBody'", nullptr);
+//            return 0;
+//        }
+//        cobj->setPhysicsBody(arg0);
+//        lua_settop(tolua_S, 1);
+//        return 1;
+//    }
+//    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Node:setPhysicsBody",argc, 1);
+//    return 0;
+//
+//#if COCOS2D_DEBUG >= 1
+//    tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Node_setPhysicsBody'.",&tolua_err);
+//#endif
+//
+//    return 0;
+//}
 int lua_cocos2dx_Node_getDescription(lua_State* tolua_S)
 {
     int argc = 0;
@@ -7613,53 +7613,53 @@ int lua_cocos2dx_Node_getRotation(lua_State* tolua_S)
 
     return 0;
 }
-int lua_cocos2dx_Node_getPhysicsBody(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Node* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Node",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Node*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Node_getPhysicsBody'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Node_getPhysicsBody'", nullptr);
-            return 0;
-        }
-        cocos2d::PhysicsBody* ret = cobj->getPhysicsBody();
-        object_to_luaval<cocos2d::PhysicsBody>(tolua_S, "cc.PhysicsBody",(cocos2d::PhysicsBody*)ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Node:getPhysicsBody",argc, 0);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Node_getPhysicsBody'.",&tolua_err);
-#endif
-
-    return 0;
-}
+//int lua_cocos2dx_Node_getPhysicsBody(lua_State* tolua_S)
+//{
+//    int argc = 0;
+//    cocos2d::Node* cobj = nullptr;
+//    bool ok  = true;
+//
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//
+//
+//#if COCOS2D_DEBUG >= 1
+//    if (!tolua_isusertype(tolua_S,1,"cc.Node",0,&tolua_err)) goto tolua_lerror;
+//#endif
+//
+//    cobj = (cocos2d::Node*)tolua_tousertype(tolua_S,1,0);
+//
+//#if COCOS2D_DEBUG >= 1
+//    if (!cobj) 
+//    {
+//        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Node_getPhysicsBody'", nullptr);
+//        return 0;
+//    }
+//#endif
+//
+//    argc = lua_gettop(tolua_S)-1;
+//    if (argc == 0) 
+//    {
+//        if(!ok)
+//        {
+//            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Node_getPhysicsBody'", nullptr);
+//            return 0;
+//        }
+//        cocos2d::PhysicsBody* ret = cobj->getPhysicsBody();
+//        object_to_luaval<cocos2d::PhysicsBody>(tolua_S, "cc.PhysicsBody",(cocos2d::PhysicsBody*)ret);
+//        return 1;
+//    }
+//    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Node:getPhysicsBody",argc, 0);
+//    return 0;
+//
+//#if COCOS2D_DEBUG >= 1
+//    tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Node_getPhysicsBody'.",&tolua_err);
+//#endif
+//
+//    return 0;
+//}
 int lua_cocos2dx_Node_getAnchorPointInPoints(lua_State* tolua_S)
 {
     int argc = 0;
@@ -10844,7 +10844,7 @@ int lua_register_cocos2dx_Node(lua_State* tolua_S)
         tolua_function(tolua_S,"new",lua_cocos2dx_Node_constructor);
         tolua_function(tolua_S,"addChild",lua_cocos2dx_Node_addChild);
         tolua_function(tolua_S,"removeComponent",lua_cocos2dx_Node_removeComponent);
-        tolua_function(tolua_S,"setPhysicsBody",lua_cocos2dx_Node_setPhysicsBody);
+        //tolua_function(tolua_S,"setPhysicsBody",lua_cocos2dx_Node_setPhysicsBody);
         tolua_function(tolua_S,"getDescription",lua_cocos2dx_Node_getDescription);
         tolua_function(tolua_S,"setRotationSkewY",lua_cocos2dx_Node_setRotationSkewY);
         tolua_function(tolua_S,"setOpacityModifyRGB",lua_cocos2dx_Node_setOpacityModifyRGB);
@@ -10912,7 +10912,7 @@ int lua_register_cocos2dx_Node(lua_State* tolua_S)
         tolua_function(tolua_S,"runAction",lua_cocos2dx_Node_runAction);
         tolua_function(tolua_S,"visit",lua_cocos2dx_Node_visit);
         tolua_function(tolua_S,"getRotation",lua_cocos2dx_Node_getRotation);
-        tolua_function(tolua_S,"getPhysicsBody",lua_cocos2dx_Node_getPhysicsBody);
+        //tolua_function(tolua_S,"getPhysicsBody",lua_cocos2dx_Node_getPhysicsBody);
         tolua_function(tolua_S,"getAnchorPointInPoints",lua_cocos2dx_Node_getAnchorPointInPoints);
         tolua_function(tolua_S,"removeChildByName",lua_cocos2dx_Node_removeChildByName);
         tolua_function(tolua_S,"getGLProgramState",lua_cocos2dx_Node_getGLProgramState);
@@ -10984,53 +10984,53 @@ int lua_register_cocos2dx_Node(lua_State* tolua_S)
     return 1;
 }
 
-int lua_cocos2dx_Scene_initWithPhysics(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scene* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scene",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scene*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scene_initWithPhysics'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scene_initWithPhysics'", nullptr);
-            return 0;
-        }
-        bool ret = cobj->initWithPhysics();
-        tolua_pushboolean(tolua_S,(bool)ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scene:initWithPhysics",argc, 0);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scene_initWithPhysics'.",&tolua_err);
-#endif
-
-    return 0;
-}
+//int lua_cocos2dx_Scene_initWithPhysics(lua_State* tolua_S)
+//{
+//    int argc = 0;
+//    cocos2d::Scene* cobj = nullptr;
+//    bool ok  = true;
+//
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//
+//
+//#if COCOS2D_DEBUG >= 1
+//    if (!tolua_isusertype(tolua_S,1,"cc.Scene",0,&tolua_err)) goto tolua_lerror;
+//#endif
+//
+//    cobj = (cocos2d::Scene*)tolua_tousertype(tolua_S,1,0);
+//
+//#if COCOS2D_DEBUG >= 1
+//    if (!cobj) 
+//    {
+//        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scene_initWithPhysics'", nullptr);
+//        return 0;
+//    }
+//#endif
+//
+//    argc = lua_gettop(tolua_S)-1;
+//    if (argc == 0) 
+//    {
+//        if(!ok)
+//        {
+//            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scene_initWithPhysics'", nullptr);
+//            return 0;
+//        }
+//        bool ret = cobj->initWithPhysics();
+//        tolua_pushboolean(tolua_S,(bool)ret);
+//        return 1;
+//    }
+//    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scene:initWithPhysics",argc, 0);
+//    return 0;
+//
+//#if COCOS2D_DEBUG >= 1
+//    tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scene_initWithPhysics'.",&tolua_err);
+//#endif
+//
+//    return 0;
+//}
 int lua_cocos2dx_Scene_setCameraOrderDirty(lua_State* tolua_S)
 {
     int argc = 0;
@@ -11151,56 +11151,56 @@ int lua_cocos2dx_Scene_render(lua_State* tolua_S)
 
     return 0;
 }
-int lua_cocos2dx_Scene_stepPhysicsAndNavigation(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scene* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scene",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scene*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scene_stepPhysicsAndNavigation'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
-    {
-        double arg0;
-
-        ok &= luaval_to_number(tolua_S, 2,&arg0, "cc.Scene:stepPhysicsAndNavigation");
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scene_stepPhysicsAndNavigation'", nullptr);
-            return 0;
-        }
-        cobj->stepPhysicsAndNavigation(arg0);
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scene:stepPhysicsAndNavigation",argc, 1);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scene_stepPhysicsAndNavigation'.",&tolua_err);
-#endif
-
-    return 0;
-}
+//int lua_cocos2dx_Scene_stepPhysicsAndNavigation(lua_State* tolua_S)
+//{
+//    int argc = 0;
+//    cocos2d::Scene* cobj = nullptr;
+//    bool ok  = true;
+//
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//
+//
+//#if COCOS2D_DEBUG >= 1
+//    if (!tolua_isusertype(tolua_S,1,"cc.Scene",0,&tolua_err)) goto tolua_lerror;
+//#endif
+//
+//    cobj = (cocos2d::Scene*)tolua_tousertype(tolua_S,1,0);
+//
+//#if COCOS2D_DEBUG >= 1
+//    if (!cobj) 
+//    {
+//        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scene_stepPhysicsAndNavigation'", nullptr);
+//        return 0;
+//    }
+//#endif
+//
+//    argc = lua_gettop(tolua_S)-1;
+//    if (argc == 1) 
+//    {
+//        double arg0;
+//
+//        ok &= luaval_to_number(tolua_S, 2,&arg0, "cc.Scene:stepPhysicsAndNavigation");
+//        if(!ok)
+//        {
+//            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scene_stepPhysicsAndNavigation'", nullptr);
+//            return 0;
+//        }
+//        cobj->stepPhysicsAndNavigation(arg0);
+//        lua_settop(tolua_S, 1);
+//        return 1;
+//    }
+//    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scene:stepPhysicsAndNavigation",argc, 1);
+//    return 0;
+//
+//#if COCOS2D_DEBUG >= 1
+//    tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scene_stepPhysicsAndNavigation'.",&tolua_err);
+//#endif
+//
+//    return 0;
+//}
 int lua_cocos2dx_Scene_onProjectionChanged(lua_State* tolua_S)
 {
     int argc = 0;
@@ -11251,53 +11251,53 @@ int lua_cocos2dx_Scene_onProjectionChanged(lua_State* tolua_S)
 
     return 0;
 }
-int lua_cocos2dx_Scene_getPhysicsWorld(lua_State* tolua_S)
-{
-    int argc = 0;
-    cocos2d::Scene* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"cc.Scene",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (cocos2d::Scene*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scene_getPhysicsWorld'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scene_getPhysicsWorld'", nullptr);
-            return 0;
-        }
-        cocos2d::PhysicsWorld* ret = cobj->getPhysicsWorld();
-        object_to_luaval<cocos2d::PhysicsWorld>(tolua_S, "cc.PhysicsWorld",(cocos2d::PhysicsWorld*)ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scene:getPhysicsWorld",argc, 0);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scene_getPhysicsWorld'.",&tolua_err);
-#endif
-
-    return 0;
-}
+//int lua_cocos2dx_Scene_getPhysicsWorld(lua_State* tolua_S)
+//{
+//    int argc = 0;
+//    cocos2d::Scene* cobj = nullptr;
+//    bool ok  = true;
+//
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//
+//
+//#if COCOS2D_DEBUG >= 1
+//    if (!tolua_isusertype(tolua_S,1,"cc.Scene",0,&tolua_err)) goto tolua_lerror;
+//#endif
+//
+//    cobj = (cocos2d::Scene*)tolua_tousertype(tolua_S,1,0);
+//
+//#if COCOS2D_DEBUG >= 1
+//    if (!cobj) 
+//    {
+//        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Scene_getPhysicsWorld'", nullptr);
+//        return 0;
+//    }
+//#endif
+//
+//    argc = lua_gettop(tolua_S)-1;
+//    if (argc == 0) 
+//    {
+//        if(!ok)
+//        {
+//            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scene_getPhysicsWorld'", nullptr);
+//            return 0;
+//        }
+//        cocos2d::PhysicsWorld* ret = cobj->getPhysicsWorld();
+//        object_to_luaval<cocos2d::PhysicsWorld>(tolua_S, "cc.PhysicsWorld",(cocos2d::PhysicsWorld*)ret);
+//        return 1;
+//    }
+//    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Scene:getPhysicsWorld",argc, 0);
+//    return 0;
+//
+//#if COCOS2D_DEBUG >= 1
+//    tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scene_getPhysicsWorld'.",&tolua_err);
+//#endif
+//
+//    return 0;
+//}
 int lua_cocos2dx_Scene_initWithSize(lua_State* tolua_S)
 {
     int argc = 0;
@@ -11465,40 +11465,40 @@ int lua_cocos2dx_Scene_create(lua_State* tolua_S)
 #endif
     return 0;
 }
-int lua_cocos2dx_Scene_createWithPhysics(lua_State* tolua_S)
-{
-    int argc = 0;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertable(tolua_S,1,"cc.Scene",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    argc = lua_gettop(tolua_S) - 1;
-
-    if (argc == 0)
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scene_createWithPhysics'", nullptr);
-            return 0;
-        }
-        cocos2d::Scene* ret = cocos2d::Scene::createWithPhysics();
-        object_to_luaval<cocos2d::Scene>(tolua_S, "cc.Scene",(cocos2d::Scene*)ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "cc.Scene:createWithPhysics",argc, 0);
-    return 0;
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scene_createWithPhysics'.",&tolua_err);
-#endif
-    return 0;
-}
+//int lua_cocos2dx_Scene_createWithPhysics(lua_State* tolua_S)
+//{
+//    int argc = 0;
+//    bool ok  = true;
+//
+//#if COCOS2D_DEBUG >= 1
+//    tolua_Error tolua_err;
+//#endif
+//
+//#if COCOS2D_DEBUG >= 1
+//    if (!tolua_isusertable(tolua_S,1,"cc.Scene",0,&tolua_err)) goto tolua_lerror;
+//#endif
+//
+//    argc = lua_gettop(tolua_S) - 1;
+//
+//    if (argc == 0)
+//    {
+//        if(!ok)
+//        {
+//            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Scene_createWithPhysics'", nullptr);
+//            return 0;
+//        }
+//        cocos2d::Scene* ret = cocos2d::Scene::createWithPhysics();
+//        object_to_luaval<cocos2d::Scene>(tolua_S, "cc.Scene",(cocos2d::Scene*)ret);
+//        return 1;
+//    }
+//    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "cc.Scene:createWithPhysics",argc, 0);
+//    return 0;
+//#if COCOS2D_DEBUG >= 1
+//    tolua_lerror:
+//    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Scene_createWithPhysics'.",&tolua_err);
+//#endif
+//    return 0;
+//}
 int lua_cocos2dx_Scene_constructor(lua_State* tolua_S)
 {
     int argc = 0;
@@ -11549,17 +11549,17 @@ int lua_register_cocos2dx_Scene(lua_State* tolua_S)
 
     tolua_beginmodule(tolua_S,"Scene");
         tolua_function(tolua_S,"new",lua_cocos2dx_Scene_constructor);
-        tolua_function(tolua_S,"initWithPhysics",lua_cocos2dx_Scene_initWithPhysics);
+        //tolua_function(tolua_S,"initWithPhysics",lua_cocos2dx_Scene_initWithPhysics);
         tolua_function(tolua_S,"setCameraOrderDirty",lua_cocos2dx_Scene_setCameraOrderDirty);
         tolua_function(tolua_S,"render",lua_cocos2dx_Scene_render);
-        tolua_function(tolua_S,"stepPhysicsAndNavigation",lua_cocos2dx_Scene_stepPhysicsAndNavigation);
+        //tolua_function(tolua_S,"stepPhysicsAndNavigation",lua_cocos2dx_Scene_stepPhysicsAndNavigation);
         tolua_function(tolua_S,"onProjectionChanged",lua_cocos2dx_Scene_onProjectionChanged);
-        tolua_function(tolua_S,"getPhysicsWorld",lua_cocos2dx_Scene_getPhysicsWorld);
+        //tolua_function(tolua_S,"getPhysicsWorld",lua_cocos2dx_Scene_getPhysicsWorld);
         tolua_function(tolua_S,"initWithSize",lua_cocos2dx_Scene_initWithSize);
         tolua_function(tolua_S,"getDefaultCamera",lua_cocos2dx_Scene_getDefaultCamera);
         tolua_function(tolua_S,"createWithSize", lua_cocos2dx_Scene_createWithSize);
         tolua_function(tolua_S,"create", lua_cocos2dx_Scene_create);
-        tolua_function(tolua_S,"createWithPhysics", lua_cocos2dx_Scene_createWithPhysics);
+        //tolua_function(tolua_S,"createWithPhysics", lua_cocos2dx_Scene_createWithPhysics);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(cocos2d::Scene).name();
     g_luaType[typeName] = "cc.Scene";
