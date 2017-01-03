@@ -76,7 +76,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
-    <IntDir>$(SolutionDir)$(Configuration).win32\</IntDir>
+    <IntDir>$(Configuration).win32\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -222,17 +222,6 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\GameEditor.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\cocos2d-x\cocos\2d\libcocos2d.vcxproj">
-      <Project>{98a51ba8-fc3a-415b-ac8f-8c7bd464e93e}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\cocos2d-x\cocos\scripting\lua-bindings\proj.win32\libluacocos2d.vcxproj">
-      <Project>{9f2d6ce6-c893-4400-b50c-6db70cc2562f}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FW_FrameWork\FW_FrameWork.vcxproj">
-      <Project>{e85ad037-ef7c-4913-8549-beccc83f7180}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
