@@ -5,3 +5,4 @@ Debug*
 *.opendb
 *.opensdf
 .settings
+simulator
