@@ -28,7 +28,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -71,6 +71,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -80,9 +81,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_WINDOWS;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)\..\..\FW_FrameWork;$(SolutionDir)\..\..\cocos2d-x\cocos;$(SolutionDir)\..\..\cocos2d-x\cocos\editor-support;$(SolutionDir)\..\..\cocos2d-x\cocos\platform;$(SolutionDir)\..\..\cocos2d-x\cocos\platform\desktop;$(SolutionDir)\..\..\cocos2d-x\external\win32-specific\gles\include\OGLES;$(SolutionDir)\..\..\cocos2d-x\external\glfw3\include\win32;$(SolutionDir)\..\..\cocos2d-x\external;$(SolutionDir)\..\..\cocos2d-x\external\lua\lua;$(SolutionDir)\..\..\cocos2d-x\external\lua\tolua;$(SolutionDir)\..\..\cocos2d-x\external\lua\luajit;$(SolutionDir)\..\..\cocos2d-x\cocos\scripting\lua-bindings\manual;$(SolutionDir)\..\..\cocos2d-x\cocos\scripting\lua-bindings\auto;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\runtime-src\proj.win32\Debug.win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

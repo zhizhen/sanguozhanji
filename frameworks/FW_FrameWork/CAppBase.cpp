@@ -93,11 +93,11 @@ void CAppBase::Init()
 		director->runWithScene(pBaseScene);
 		pBaseScene->release();
 
-		////// register lua module
+		//// register lua module
 		//auto engine = LuaEngine::getInstance();
 		//ScriptEngineManager::getInstance()->setScriptEngine(engine);
 		//lua_State* L = engine->getLuaStack()->getLuaState();
-		////lua_module_register(L);
+		//lua_module_register(L);
 
 		////register_all_packages();
 
