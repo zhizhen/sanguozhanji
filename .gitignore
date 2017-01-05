@@ -1,6 +1,5 @@
 Debug*
 *.sdf
-*.user
 .vs
 *.opendb
 *.opensdf
