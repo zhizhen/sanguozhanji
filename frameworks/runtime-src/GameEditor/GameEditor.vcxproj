@@ -76,7 +76,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
-    <IntDir>$(SolutionDir)$(Configuration).win32\</IntDir>
+    <IntDir>$(Configuration).win32\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -93,15 +93,19 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>
+      </SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)\..\..\FW_FrameWork;$(SolutionDir)\..\..\cocos2d-x\cocos;$(SolutionDir)\..\..\cocos2d-x\external\win32-specific\gles\include\OGLES;$(SolutionDir)\..\..\cocos2d-x\external\glfw3\include\win32;$(SolutionDir)\..\..\cocos2d-x\external;$(SolutionDir)\..\..\cocos2d-x\external\lua\lua;$(SolutionDir)\..\..\cocos2d-x\external\lua\tolua;$(SolutionDir)\..\..\cocos2d-x\external\lua\luajit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glew32.lib;opengl32.lib;glfw3.lib;libcocos2d.lib;libluacocos2d.lib;FW_FrameWork.lib;libcurl_imp.lib;libeay32.lib;libiconv.lib;libjpeg.lib;libpng.lib;libmpg123.lib;libzlib.lib;OpenAl32.lib;sqlite3.lib;ssleay32.lib;lua51.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;glfw3.lib;libcurl_imp.lib;libeay32.lib;libiconv.lib;libjpeg.lib;libpng.lib;libmpg123.lib;libzlib.lib;OpenAl32.lib;sqlite3.lib;ssleay32.lib;lua51.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
+      <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
+      <OutputFile>$(SolutionDir)../../../simulator/win32/$(TargetName)$(TargetExt)</OutputFile>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>

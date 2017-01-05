@@ -6,6 +6,7 @@
 #include "audio/include/SimpleAudioEngine.h"
 #include "lua_module_register.h"
 
+USING_NS_CC;
 
 static cocos2d::Size designResolutionSize = cocos2d::Size(480, 320);
 static cocos2d::Size smallResolutionSize = cocos2d::Size(480, 320);
