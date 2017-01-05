@@ -75,7 +75,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <OutDir>$(ProjectDir)$(Configuration).win32\</OutDir>
     <IntDir>$(Configuration).win32\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -102,10 +102,11 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glew32.lib;opengl32.lib;glfw3.lib;libcurl_imp.lib;libeay32.lib;libiconv.lib;libjpeg.lib;libpng.lib;libmpg123.lib;libzlib.lib;OpenAl32.lib;sqlite3.lib;ssleay32.lib;lua51.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;libluacocos2d.lib;opengl32.lib;glfw3.lib;libcurl_imp.lib;libeay32.lib;libiconv.lib;libjpeg.lib;libpng.lib;libmpg123.lib;libzlib.lib;OpenAl32.lib;sqlite3.lib;ssleay32.lib;lua51.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration).win32;%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
       <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
       <OutputFile>$(SolutionDir)../../../simulator/win32/$(TargetName)$(TargetExt)</OutputFile>
+      <ShowProgress>LinkVerboseLib</ShowProgress>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>

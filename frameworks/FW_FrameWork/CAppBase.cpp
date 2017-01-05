@@ -85,31 +85,31 @@ void CAppBase::Init()
 		//register_all_packages();
 
 		// create a scene. it's an autorelease object
-		CAppBaseScene* pBaseScene = new CAppBaseScene();
-		pBaseScene->InitGameLayer();
+		//CAppBaseScene* pBaseScene = new CAppBaseScene();
+		//pBaseScene->InitGameLayer();
 
-		//auto scene = HelloWorld::createScene();
+		////auto scene = HelloWorld::createScene();
 
-		// run
-		director->runWithScene(pBaseScene);
-		pBaseScene->release();
+		//// run
+		//director->runWithScene(pBaseScene);
+		//pBaseScene->release();
 
 		//// register lua module
-		//auto engine = LuaEngine::getInstance();
-		//ScriptEngineManager::getInstance()->setScriptEngine(engine);
-		//lua_State* L = engine->getLuaStack()->getLuaState();
-		//lua_module_register(L);
+		auto engine = LuaEngine::getInstance();
+		ScriptEngineManager::getInstance()->setScriptEngine(engine);
+		lua_State* L = engine->getLuaStack()->getLuaState();
+		lua_module_register(L);
 
-		////register_all_packages();
+		//register_all_packages();
 
+		LuaStack* stack = engine->getLuaStack();
+		stack->setXXTEAKeyAndSign("2dxLua", strlen("2dxLua"), "XXTEA", strlen("XXTEA"));
+
+		//register custom function
 		//LuaStack* stack = engine->getLuaStack();
-		//stack->setXXTEAKeyAndSign("2dxLua", strlen("2dxLua"), "XXTEA", strlen("XXTEA"));
+		//register_custom_function(stack->getLuaState());
 
-		////register custom function
-		////LuaStack* stack = engine->getLuaStack();
-		////register_custom_function(stack->getLuaState());
-
-		//engine->executeScriptFile("src/main.lua");
+		engine->executeScriptFile("src/main.lua");
 
 	}
 }
