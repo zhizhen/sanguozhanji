@@ -7,6 +7,7 @@
 
 USING_NS_CC;
 
+
 CCocosApp::CCocosApp()
 {
 

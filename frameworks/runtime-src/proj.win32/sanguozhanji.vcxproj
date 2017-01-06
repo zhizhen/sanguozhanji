@@ -195,7 +195,6 @@ xcopy "$(ProjectDir)..\..\..\src" "$(LocalDebuggerWorkingDirectory)\src" /D /E /
     <ClInclude Include="CGameApp.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="SimulatorWin.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -203,7 +202,6 @@ xcopy "$(ProjectDir)..\..\..\src" "$(LocalDebuggerWorkingDirectory)\src" /D /E /
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="CGameApp.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SimulatorWin.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -219,9 +217,6 @@ xcopy "$(ProjectDir)..\..\..\src" "$(LocalDebuggerWorkingDirectory)\src" /D /E /
     </ProjectReference>
     <ProjectReference Include="..\..\cocos2d-x\cocos\scripting\lua-bindings\proj.win32\libluacocos2d.vcxproj">
       <Project>{9f2d6ce6-c893-4400-b50c-6db70cc2562f}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\cocos2d-x\tools\simulator\libsimulator\proj.win32\libsimulator.vcxproj">
-      <Project>{001b324a-bb91-4e83-875c-c92f75c40857}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\FW_FrameWork\FW_FrameWork.vcxproj">
       <Project>{e85ad037-ef7c-4913-8549-beccc83f7180}</Project>

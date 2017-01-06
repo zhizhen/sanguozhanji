@@ -98,15 +98,19 @@
       <AdditionalIncludeDirectories>$(SolutionDir)\..\..\FW_FrameWork;$(SolutionDir)\..\..\cocos2d-x\cocos;$(SolutionDir)\..\..\cocos2d-x\external\win32-specific\gles\include\OGLES;$(SolutionDir)\..\..\cocos2d-x\external\glfw3\include\win32;$(SolutionDir)\..\..\cocos2d-x\external;$(SolutionDir)\..\..\cocos2d-x\external\lua\lua;$(SolutionDir)\..\..\cocos2d-x\external\lua\tolua;$(SolutionDir)\..\..\cocos2d-x\external\lua\luajit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <MinimalRebuild>false</MinimalRebuild>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glew32.lib;libluacocos2d.lib;opengl32.lib;glfw3.lib;libcurl_imp.lib;libeay32.lib;libiconv.lib;libjpeg.lib;libpng.lib;libmpg123.lib;libzlib.lib;OpenAl32.lib;sqlite3.lib;ssleay32.lib;lua51.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration).win32;%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;glfw3.lib;libcurl_imp.lib;libeay32.lib;libiconv.lib;libjpeg.lib;libpng.lib;libmpg123.lib;libzlib.lib;OpenAl32.lib;sqlite3.lib;ssleay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\GameEditor\Debug.win32;$(SolutionDir)$(Configuration).win32;%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
       <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
       <OutputFile>$(SolutionDir)../../../simulator/win32/$(TargetName)$(TargetExt)</OutputFile>
-      <ShowProgress>LinkVerboseLib</ShowProgress>
+      <ShowProgress>LinkVerbose</ShowProgress>
+      <LinkStatus>
+      </LinkStatus>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -114,10 +118,13 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </Midl>
     <ResourceCompile>
-      <Culture>0x0804</Culture>
+      <Culture>0x0409</Culture>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
