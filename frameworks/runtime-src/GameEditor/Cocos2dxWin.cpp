@@ -19,8 +19,8 @@ IMPLEMENT_DYNAMIC(CCocos2dxWin, CWnd)
 CCocos2dxWin::CCocos2dxWin()
 {
 	m_pFrameWork = NULL;
-	AllocConsole();
-	freopen("CONOUT$", "w", stdout);
+	//AllocConsole();
+	//freopen("CONOUT$", "w", stdout);
 }
 
 CCocos2dxWin::~CCocos2dxWin()

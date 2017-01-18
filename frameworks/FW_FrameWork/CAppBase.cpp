@@ -23,6 +23,8 @@ CAppBase::CAppBase()
 	m_InitViewName = "GameWin";
 	m_InitHwnd = NULL;
 #endif
+	AllocConsole();
+	freopen("CONOUT$", "w", stdout);
 }
 
 CAppBase::~CAppBase()

@@ -1,5 +1,5 @@
 #include "main.h"
-#include "SimulatorWin.h"
+//#include "SimulatorWin.h"
 #include <shellapi.h>
 #include "cocos2d.h"
 #include "CGameApp.h"

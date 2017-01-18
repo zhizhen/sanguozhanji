@@ -3,9 +3,10 @@ local AppBase = class("AppBase")
 
 function AppBase:ctor(configs)
     self.configs_ = {
-        viewsRoot  = "app.views",
-        modelsRoot = "app.models",
-        defaultSceneName = "MainScene",
+        viewsRoot           = "app.views",
+        modelsRoot          = "app.models",
+        controllerRoot      = "app.controllers",
+        -- defaultSceneName    = "MainScene",
     }
 
     for k, v in pairs(configs or {}) do
@@ -17,6 +18,9 @@ function AppBase:ctor(configs)
     end
     if type(self.configs_.modelsRoot) ~= "table" then
         self.configs_.modelsRoot = {self.configs_.modelsRoot}
+    end
+    if type(self.configs_.controllerRoot) ~= "table" then
+        self.configs_.controllerRoot = {self.configs_.controllerRoot}
     end
 
     if DEBUG > 1 then
@@ -31,10 +35,10 @@ function AppBase:ctor(configs)
     self:onCreate()
 end
 
-function AppBase:run(initSceneName)
-    initSceneName = initSceneName or self.configs_.defaultSceneName
-    self:enterScene(initSceneName)
-end
+-- function AppBase:run(initSceneName)
+--     initSceneName = initSceneName or self.configs_.defaultSceneName
+--     self:enterScene(initSceneName)
+-- end
 
 function AppBase:enterScene(sceneName, transition, time, more)
     local view = self:createView(sceneName)
